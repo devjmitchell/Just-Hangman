@@ -9,7 +9,9 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
+    
+    // TODO: Update contraints so buttons are stacked nicely
+    // TODO: Add border around difficulty buttons so they look like letter buttons on next screen?
     override func viewDidLoad() {
         super.viewDidLoad()
         

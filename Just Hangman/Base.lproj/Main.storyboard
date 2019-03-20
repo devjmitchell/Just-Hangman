@@ -85,53 +85,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="yFK-Hq-pZM" userLabel="Main Stack View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ehD-6O-3Z0" userLabel="Main Stack View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="400"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman0" translatesAutoresizingMaskIntoConstraints="NO" id="aUm-Yy-wJB">
-                                        <rect key="frame" x="27.5" y="0.0" width="320" height="240"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am4-uY-TBB">
-                                        <rect key="frame" x="122" y="279" width="131.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="BZY-Na-iW9" userLabel="Button Stack View">
-                                        <rect key="frame" x="157.5" y="338.5" width="60" height="264.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEN-Ay-UHW" userLabel="Top Half">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dn-bM-s78" userLabel="EASY">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
-                                                <state key="normal" title="EASY"/>
-                                                <connections>
-                                                    <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="Amy-C7-ijC"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-YF-0E0" userLabel="MEDIUM">
-                                                <rect key="frame" x="0.0" y="117.5" width="60" height="30"/>
-                                                <state key="normal" title="MEDIUM"/>
-                                                <connections>
-                                                    <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="yTl-Am-YOQ"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-IU-rEp" userLabel="HARD">
-                                                <rect key="frame" x="0.0" y="234.5" width="60" height="30"/>
-                                                <state key="normal" title="HARD"/>
-                                                <connections>
-                                                    <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="CM8-bQ-8pB"/>
-                                                </connections>
-                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman0" translatesAutoresizingMaskIntoConstraints="NO" id="aUm-Yy-wJB">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            </imageView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="aUm-Yy-wJB" secondAttribute="bottom" id="cSR-5t-2TW"/>
+                                            <constraint firstAttribute="trailing" secondItem="aUm-Yy-wJB" secondAttribute="trailing" id="pbY-Th-oaH"/>
+                                            <constraint firstItem="aUm-Yy-wJB" firstAttribute="top" secondItem="GEN-Ay-UHW" secondAttribute="top" id="pdK-DX-Lvl"/>
+                                            <constraint firstItem="aUm-Yy-wJB" firstAttribute="leading" secondItem="GEN-Ay-UHW" secondAttribute="leading" id="set-6g-0mD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02a-oJ-lYJ" userLabel="Bottom Half">
+                                        <rect key="frame" x="0.0" y="200" width="375" height="200"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-xK-4Vi">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am4-uY-TBB">
+                                                        <rect key="frame" x="122" y="0.0" width="131.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dn-bM-s78" userLabel="EASY">
+                                                        <rect key="frame" x="168.5" y="50" width="38" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="C0T-bW-bF5"/>
+                                                        </constraints>
+                                                        <state key="normal" title="EASY"/>
+                                                        <connections>
+                                                            <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="Amy-C7-ijC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-YF-0E0" userLabel="MEDIUM">
+                                                        <rect key="frame" x="157.5" y="100" width="60" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="hDB-eh-lfU"/>
+                                                        </constraints>
+                                                        <state key="normal" title="MEDIUM"/>
+                                                        <connections>
+                                                            <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="yTl-Am-YOQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-IU-rEp" userLabel="HARD">
+                                                        <rect key="frame" x="166.5" y="150" width="42" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="xtC-nb-UfD"/>
+                                                        </constraints>
+                                                        <state key="normal" title="HARD"/>
+                                                        <connections>
+                                                            <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="CM8-bQ-8pB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="8Wr-xK-4Vi" firstAttribute="top" secondItem="02a-oJ-lYJ" secondAttribute="top" id="IPo-PA-jlW"/>
+                                            <constraint firstItem="8Wr-xK-4Vi" firstAttribute="leading" secondItem="02a-oJ-lYJ" secondAttribute="leading" id="M2i-tx-QDc"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Wr-xK-4Vi" secondAttribute="trailing" id="ZuH-8s-0Ef"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Wr-xK-4Vi" secondAttribute="bottom" id="wCT-XA-ThO"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yaU-3Z-eVZ" firstAttribute="bottom" secondItem="yFK-Hq-pZM" secondAttribute="bottom" id="LNj-gF-FCV"/>
-                            <constraint firstItem="yaU-3Z-eVZ" firstAttribute="trailing" secondItem="yFK-Hq-pZM" secondAttribute="trailing" id="nso-mb-kQv"/>
-                            <constraint firstItem="yFK-Hq-pZM" firstAttribute="leading" secondItem="yaU-3Z-eVZ" secondAttribute="leading" id="rNW-CF-OCb"/>
-                            <constraint firstItem="yFK-Hq-pZM" firstAttribute="top" secondItem="yaU-3Z-eVZ" secondAttribute="top" id="vfj-TH-0po"/>
+                            <constraint firstItem="yaU-3Z-eVZ" firstAttribute="trailing" secondItem="ehD-6O-3Z0" secondAttribute="trailing" id="N0S-SS-1sG"/>
+                            <constraint firstItem="yaU-3Z-eVZ" firstAttribute="bottom" secondItem="ehD-6O-3Z0" secondAttribute="bottom" id="hLh-l0-jCy"/>
+                            <constraint firstItem="ehD-6O-3Z0" firstAttribute="leading" secondItem="yaU-3Z-eVZ" secondAttribute="leading" id="ln2-tC-cqG"/>
+                            <constraint firstItem="ehD-6O-3Z0" firstAttribute="top" secondItem="yaU-3Z-eVZ" secondAttribute="top" id="r3D-nP-ZpP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yaU-3Z-eVZ"/>
                     </view>
