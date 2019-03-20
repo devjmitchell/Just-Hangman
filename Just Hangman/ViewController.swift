@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Milestone7-9
+//  Just Hangman
 //
 //  Created by Jason Mitchell on 3/19/19.
 //  Copyright © 2019 Jason Mitchell. All rights reserved.
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var wordIndex = 0
     var usedLetters = [String]()
     var promptWord = ""
+    var letterButtons = [UIButton]()
     var score = 0 {
         didSet {
             scoreLabel.text = "Score = \(score)"
@@ -29,11 +30,15 @@ class ViewController: UIViewController {
             hangmanImage.image = UIImage(named: "hangman\(wrongGuessesRemaining)")
         }
     }
-    var letterButtons = [UIButton]()
+    
+    
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -42,18 +47,17 @@ class ViewController: UIViewController {
         loadButtons()
     }
     
+    
+    
+    // MARK: - Setup Methods
+    
     func loadInitialWord() {
         if let wordsURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
             if let wordsContents = try? String(contentsOf: wordsURL) {
                 let words = wordsContents.components(separatedBy: "\n")
                 allWords = words.filter { $0 != ""}
-                
-//                for word in allWords {
-//                    print("Word: \(word)")
-//                }
-//                print(allWords)
-                
                 allWords.shuffle()
+                
                 
 //                // TODO: This will be used to have alphabetized word list that I can update words.txt with -- Remove after done!
 //                let sortedWords = words.sorted()
@@ -68,29 +72,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func updatePromptWord() {
-        promptWord = ""
-        
-        for letter in word {
-            let strLetter = String(letter)
-            
-            if usedLetters.contains(strLetter) {
-                promptWord.append(strLetter)
-            } else {
-                promptWord.append("_ ")
-            }
-        }
-//        print(word)
-        title = promptWord.trimmingCharacters(in: .whitespaces)
-        
-        if !promptWord.contains("_") {
-            score += 1
-            
-            let title = "You Win!"
-            let message = "Great job guessing the correct word."
-            presentGameOverAlert(title: title, message: message)
-        }
-    }
     
     func loadButtons() {
         let width = buttonsView.frame.size.width / 6
@@ -119,13 +100,34 @@ class ViewController: UIViewController {
             letterButtons[index].layer.borderColor = UIColor.darkGray.cgColor
             letterButtons[index].tag = index
         }
+    }
+    
+    
+    
+    // MARK: - Game methods
+    
+    func updatePromptWord() {
+        promptWord = ""
         
-//        let allLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-//
-//        for i in 0..<letterButtons.count {
-////            letterButtons[i].setTitle("B", for: .normal)
-//            let char = allLetters.index
-//        }
+        for letter in word {
+            let strLetter = String(letter)
+            
+            if usedLetters.contains(strLetter) {
+                promptWord.append(strLetter)
+            } else {
+                promptWord.append("_ ")
+            }
+        }
+        
+        title = promptWord.trimmingCharacters(in: .whitespaces)
+        
+        if !promptWord.contains("_") {
+            score += 1
+            
+            let title = "You Win!"
+            let message = "Great job guessing the correct word."
+            presentGameOverAlert(title: title, message: message)
+        }
     }
     
     
@@ -149,11 +151,19 @@ class ViewController: UIViewController {
         updatePromptWord()
     }
     
+    
+    func updateUsedLetters() {
+        let labelLetters = usedLetters.joined(separator: " ")
+        usedLettersLabel.text = "Used Letters:\n \(labelLetters)"
+    }
+    
+    
     func presentGameOverAlert(title: String, message: String, actionTitle: String? = "Play Again") {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: startNewGame))
         present(ac, animated: true)
     }
+    
     
     func startNewGame(action: UIAlertAction) {
         wordIndex += 1
@@ -173,10 +183,6 @@ class ViewController: UIViewController {
         resetButtons()
     }
     
-    func updateUsedLetters() {
-        let labelLetters = usedLetters.joined(separator: " ")
-        usedLettersLabel.text = "Used Letters:\n \(labelLetters)"
-    }
     
     func resetButtons() {
         for button in letterButtons {

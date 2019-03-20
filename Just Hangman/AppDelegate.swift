@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Milestone7-9
+//  Just Hangman
 //
 //  Created by Jason Mitchell on 3/19/19.
 //  Copyright © 2019 Jason Mitchell. All rights reserved.
