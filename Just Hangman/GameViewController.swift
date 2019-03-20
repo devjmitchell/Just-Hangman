@@ -59,6 +59,7 @@ class GameViewController: UIViewController {
             if let wordsContents = try? String(contentsOf: wordsURL) {
                 let words = wordsContents.components(separatedBy: "\n")
                 allWords = words.filter { $0 != ""}
+                allWords = words.map { $0.uppercased() }
                 allWords.shuffle()
                 
                 
@@ -70,7 +71,7 @@ class GameViewController: UIViewController {
 //                }
                 
                 
-                word = allWords[0].uppercased()
+                word = allWords[0]
                 updatePromptWord()
             }
         }
