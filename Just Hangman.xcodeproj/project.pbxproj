@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D324A91122413EC4003C14A3 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D324A91122413EC4003C14A3 /* Just Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Hangman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D324A91422413EC4003C14A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D324A91622413EC4003C14A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D324A91922413EC4003C14A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				D33102432241F96800E9DEF1 /* Hangman.entitlements */,
-				D324A91322413EC4003C14A3 /* Hangman */,
+				D324A91322413EC4003C14A3 /* Just Hangman */,
 				D324A91222413EC4003C14A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,12 +51,12 @@
 		D324A91222413EC4003C14A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D324A91122413EC4003C14A3 /* Hangman.app */,
+				D324A91122413EC4003C14A3 /* Just Hangman.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D324A91322413EC4003C14A3 /* Hangman */ = {
+		D324A91322413EC4003C14A3 /* Just Hangman */ = {
 			isa = PBXGroup;
 			children = (
 				D33102422241F6BE00E9DEF1 /* Hangman.entitlements */,
@@ -68,15 +68,15 @@
 				D324A92022413EC5003C14A3 /* Info.plist */,
 				D32B11F32241BD9800083700 /* words.txt */,
 			);
-			path = Hangman;
+			path = "Just Hangman";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D324A91022413EC4003C14A3 /* Hangman */ = {
+		D324A91022413EC4003C14A3 /* Just Hangman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D324A92322413EC5003C14A3 /* Build configuration list for PBXNativeTarget "Hangman" */;
+			buildConfigurationList = D324A92322413EC5003C14A3 /* Build configuration list for PBXNativeTarget "Just Hangman" */;
 			buildPhases = (
 				D324A90D22413EC4003C14A3 /* Sources */,
 				D324A90E22413EC4003C14A3 /* Frameworks */,
@@ -86,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = Hangman;
+			name = "Just Hangman";
 			productName = "Milestone7-9";
-			productReference = D324A91122413EC4003C14A3 /* Hangman.app */;
+			productReference = D324A91122413EC4003C14A3 /* Just Hangman.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D324A90C22413EC4003C14A3 /* Build configuration list for PBXProject "Hangman" */;
+			buildConfigurationList = D324A90C22413EC4003C14A3 /* Build configuration list for PBXProject "Just Hangman" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D324A91022413EC4003C14A3 /* Hangman */,
+				D324A91022413EC4003C14A3 /* Just Hangman */,
 			);
 		};
 /* End PBXProject section */
@@ -298,12 +298,12 @@
 				CODE_SIGN_ENTITLEMENTS = Hangman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FT544A278F;
-				INFOPLIST_FILE = "$(SRCROOT)/Hangman/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Just Hangman/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devjm.Hangman;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devjm.Just-Hangman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -317,12 +317,12 @@
 				CODE_SIGN_ENTITLEMENTS = Hangman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FT544A278F;
-				INFOPLIST_FILE = "$(SRCROOT)/Hangman/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Just Hangman/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devjm.Hangman;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devjm.Just-Hangman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -332,7 +332,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D324A90C22413EC4003C14A3 /* Build configuration list for PBXProject "Hangman" */ = {
+		D324A90C22413EC4003C14A3 /* Build configuration list for PBXProject "Just Hangman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D324A92122413EC5003C14A3 /* Debug */,
@@ -341,7 +341,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D324A92322413EC5003C14A3 /* Build configuration list for PBXNativeTarget "Hangman" */ = {
+		D324A92322413EC5003C14A3 /* Build configuration list for PBXNativeTarget "Just Hangman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D324A92422413EC5003C14A3 /* Debug */,
