@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     @IBOutlet var buttonsView: UIView!
     @IBOutlet var scoreLabel: UILabel!
     
+    // TODO: Continue scrubbing word lists to make sure no words have spaces or special characters (also, do they belong in that difficulty)
     var difficulty = ""
     var allWords = [String]()
     var word = ""
@@ -38,10 +39,6 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        loadInitialWord()
-//        loadButtons()
-        print(difficulty)
     }
     
     
@@ -66,7 +63,8 @@ class GameViewController: UIViewController {
                 
                 
 //                // TODO: This will be used to have alphabetized word list that I can update words.txt with -- Remove after done!
-//                let sortedWords = words.sorted()
+//                let setOfWords = Set(allWords)
+//                let sortedWords = setOfWords.sorted()
 //                for word in sortedWords {
 //                    print(word.lowercased())
 //                }

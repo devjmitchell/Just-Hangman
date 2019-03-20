@@ -19,12 +19,6 @@ class StartViewController: UIViewController {
     
 
     @IBAction func startGame(_ sender: UIButton) {
-//        let vc = GameViewController()
-//        vc.difficulty = sender.tag
-//        print(sender.tag)
-//        print(sender.titleLabel?.text)
-//        navigationController?.pushViewController(vc, animated: true)
-        
         guard let difficulty = sender.titleLabel?.text else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
