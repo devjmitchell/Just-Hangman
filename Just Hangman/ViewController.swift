@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     var allWords = [String]()
     var word = ""
-    // TODO: Increase wordIndex to get new word after each level (make sure to check there is another word and give an alert if all words completed)
     var wordIndex = 0
     var usedLetters = [String]()
     var promptWord = ""
@@ -56,10 +55,10 @@ class ViewController: UIViewController {
                 
                 allWords.shuffle()
                 
-                // TODO: This will be used to have alphabetized word list that I can update words.txt with -- Remove after done!
+//                // TODO: This will be used to have alphabetized word list that I can update words.txt with -- Remove after done!
 //                let sortedWords = words.sorted()
 //                for word in sortedWords {
-//                    print(word)
+//                    print(word.lowercased())
 //                }
                 
                 
