@@ -24,8 +24,6 @@
 		D324A91E22413EC5003C14A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D324A92022413EC5003C14A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D32B11F32241BD9800083700 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
-		D33102422241F6BE00E9DEF1 /* Hangman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hangman.entitlements; sourceTree = "<group>"; };
-		D33102432241F96800E9DEF1 /* Hangman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hangman.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +40,6 @@
 		D324A90822413EC4003C14A3 = {
 			isa = PBXGroup;
 			children = (
-				D33102432241F96800E9DEF1 /* Hangman.entitlements */,
 				D324A91322413EC4003C14A3 /* Just Hangman */,
 				D324A91222413EC4003C14A3 /* Products */,
 			);
@@ -59,7 +56,6 @@
 		D324A91322413EC4003C14A3 /* Just Hangman */ = {
 			isa = PBXGroup;
 			children = (
-				D33102422241F6BE00E9DEF1 /* Hangman.entitlements */,
 				D324A91422413EC4003C14A3 /* AppDelegate.swift */,
 				D324A91622413EC4003C14A3 /* ViewController.swift */,
 				D324A91822413EC4003C14A3 /* Main.storyboard */,
@@ -105,7 +101,7 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -295,7 +291,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Hangman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FT544A278F;
 				INFOPLIST_FILE = "$(SRCROOT)/Just Hangman/Info.plist";
@@ -314,7 +309,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Hangman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FT544A278F;
 				INFOPLIST_FILE = "$(SRCROOT)/Just Hangman/Info.plist";
