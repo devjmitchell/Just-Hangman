@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N6I-3m-h0c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rCj-8i-ztu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Milestone7_9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="GameViewController" customModule="Just_Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman7" translatesAutoresizingMaskIntoConstraints="NO" id="a5l-yD-wV3">
-                                <rect key="frame" x="40" y="64" width="295" height="221.5"/>
+                                <rect key="frame" x="40" y="20" width="295" height="221.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="a5l-yD-wV3" secondAttribute="height" multiplier="4:3" id="BbU-Q8-SDs"/>
                                 </constraints>
@@ -44,7 +44,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Used Letters: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtY-Gf-ywf">
-                                <rect key="frame" x="20" y="290.5" width="335" height="82.5"/>
+                                <rect key="frame" x="20" y="246.5" width="335" height="126.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,28 +75,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2260" y="-434"/>
+        </scene>
+        <!--Hangman-->
+        <scene sceneID="7Mo-Kx-fNr">
+            <objects>
+                <viewController id="26g-JJ-kBw" customClass="StartViewController" customModule="Just_Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gK1-Pf-2aR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="yFK-Hq-pZM" userLabel="Main Stack View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman0" translatesAutoresizingMaskIntoConstraints="NO" id="aUm-Yy-wJB">
+                                        <rect key="frame" x="27.5" y="0.0" width="320" height="240"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am4-uY-TBB">
+                                        <rect key="frame" x="122" y="279" width="131.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="BZY-Na-iW9" userLabel="Button Stack View">
+                                        <rect key="frame" x="157.5" y="338.5" width="60" height="264.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dn-bM-s78" userLabel="EASY">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                                <state key="normal" title="EASY"/>
+                                                <connections>
+                                                    <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="Amy-C7-ijC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-YF-0E0" userLabel="MEDIUM">
+                                                <rect key="frame" x="0.0" y="117.5" width="60" height="30"/>
+                                                <state key="normal" title="MEDIUM"/>
+                                                <connections>
+                                                    <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="yTl-Am-YOQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-IU-rEp" userLabel="HARD">
+                                                <rect key="frame" x="0.0" y="234.5" width="60" height="30"/>
+                                                <state key="normal" title="HARD"/>
+                                                <connections>
+                                                    <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="CM8-bQ-8pB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yaU-3Z-eVZ" firstAttribute="bottom" secondItem="yFK-Hq-pZM" secondAttribute="bottom" id="LNj-gF-FCV"/>
+                            <constraint firstItem="yaU-3Z-eVZ" firstAttribute="trailing" secondItem="yFK-Hq-pZM" secondAttribute="trailing" id="nso-mb-kQv"/>
+                            <constraint firstItem="yFK-Hq-pZM" firstAttribute="leading" secondItem="yaU-3Z-eVZ" secondAttribute="leading" id="rNW-CF-OCb"/>
+                            <constraint firstItem="yFK-Hq-pZM" firstAttribute="top" secondItem="yaU-3Z-eVZ" secondAttribute="top" id="vfj-TH-0po"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yaU-3Z-eVZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hangman" id="xxQ-fR-2Rj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJ5-gw-lPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="-434"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Oh9-U3-3ra">
+        <scene sceneID="0jB-ZO-haI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N6I-3m-h0c" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rCj-8i-ztu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tfT-7z-pvp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fc1-2f-aog">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uGm-8T-HFj"/>
+                        <segue destination="26g-JJ-kBw" kind="relationship" relationship="rootViewController" id="lCf-UG-mgc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E2J-BR-B5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyz-iF-fyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="133.5832083958021"/>
+            <point key="canvasLocation" x="629.60000000000002" y="-434.03298350824593"/>
         </scene>
     </scenes>
     <resources>
-        <image name="hangman7" width="640" height="480"/>
+        <image name="hangman0" width="320" height="240"/>
+        <image name="hangman7" width="320" height="240"/>
     </resources>
 </document>

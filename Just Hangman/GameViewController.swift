@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GameViewController.swift
 //  Just Hangman
 //
 //  Created by Jason Mitchell on 3/19/19.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     @IBOutlet var hangmanImage: UIImageView!
     @IBOutlet var usedLettersLabel: UILabel!
     @IBOutlet var buttonsView: UIView!
     @IBOutlet var scoreLabel: UILabel!
     
+    var difficulty = ""
     var allWords = [String]()
     var word = ""
     var wordIndex = 0
@@ -37,12 +38,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        loadInitialWord()
+//        loadButtons()
+        print(difficulty)
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         loadInitialWord()
         loadButtons()
     }
@@ -52,7 +57,8 @@ class ViewController: UIViewController {
     // MARK: - Setup Methods
     
     func loadInitialWord() {
-        if let wordsURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
+        let fileName = "words-\(difficulty.lowercased())"
+        if let wordsURL = Bundle.main.url(forResource: fileName, withExtension: "txt") {
             if let wordsContents = try? String(contentsOf: wordsURL) {
                 let words = wordsContents.components(separatedBy: "\n")
                 allWords = words.filter { $0 != ""}
@@ -74,7 +80,7 @@ class ViewController: UIViewController {
     
     
     func loadButtons() {
-        let width = buttonsView.frame.size.width / 6
+        let width = buttonsView.frame.width / 6
         let height = buttonsView.frame.height / 5
         
         for row in 0..<5 {

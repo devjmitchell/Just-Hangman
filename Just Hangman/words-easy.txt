@@ -1,0 +1,5 @@
+APPLE
+CODE
+CAT
+BEE
+DOG
