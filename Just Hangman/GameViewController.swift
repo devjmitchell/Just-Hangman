@@ -77,24 +77,6 @@ class GameViewController: UIViewController {
 //                print(sortedWords.count)
                 
                 
-//                let shortWords = sortedWords.filter { $0.count <= 4 }
-//                let mediumWords = sortedWords.filter { $0.count == 5 || $0.count == 6 }
-//                let longWords = sortedWords.filter { $0.count >= 7 }
-//
-////                for word in longWords {
-////                    print(word.lowercased())
-////                }
-//
-//                print(shortWords.count)
-//                print(mediumWords.count)
-//                print(longWords.count)
-////
-////                for i in 2...13 {
-////                    let count = sortedWords.filter { $0.count == i }.count
-////                    print("\(i) letter words: \(count)")
-////                }
-                
-                
                 word = allWords[0]
                 updatePromptWord()
             }
