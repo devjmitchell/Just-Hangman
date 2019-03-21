@@ -9,22 +9,36 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    @IBOutlet var shortButton: UIButton!
+    @IBOutlet var mediumButton: UIButton!
+    @IBOutlet var longButton: UIButton!
     
-    // TODO: Update contraints so buttons are stacked nicely
-    // TODO: Add border around difficulty buttons so they look like letter buttons on next screen?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backButton
+        
+        setupButtonBorders()
+    }
+    
+    
+    func setupButtonBorders() {
+        let buttons: [UIButton] = [shortButton, mediumButton, longButton]
+        
+        for button in buttons {
+            button.layer.cornerRadius = 5
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.darkGray.cgColor
+        }
     }
     
 
     @IBAction func startGame(_ sender: UIButton) {
-        guard let difficulty = sender.titleLabel?.text else { return }
+        guard let category = sender.titleLabel?.text else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-        vc.difficulty = difficulty
+        vc.category = category
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -13,8 +13,8 @@
 		D324A91C22413EC5003C14A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D324A91B22413EC5003C14A3 /* Assets.xcassets */; };
 		D324A91F22413EC5003C14A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D324A91D22413EC5003C14A3 /* LaunchScreen.storyboard */; };
 		D38BA98422429EC60091305B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38BA98322429EC60091305B /* StartViewController.swift */; };
-		D38BA9882242A6460091305B /* words-easy.txt in Resources */ = {isa = PBXBuildFile; fileRef = D38BA9852242A6460091305B /* words-easy.txt */; };
-		D38BA9892242A6460091305B /* words-hard.txt in Resources */ = {isa = PBXBuildFile; fileRef = D38BA9862242A6460091305B /* words-hard.txt */; };
+		D38BA9882242A6460091305B /* words-short.txt in Resources */ = {isa = PBXBuildFile; fileRef = D38BA9852242A6460091305B /* words-short.txt */; };
+		D38BA9892242A6460091305B /* words-long.txt in Resources */ = {isa = PBXBuildFile; fileRef = D38BA9862242A6460091305B /* words-long.txt */; };
 		D38BA98A2242A6460091305B /* words-medium.txt in Resources */ = {isa = PBXBuildFile; fileRef = D38BA9872242A6460091305B /* words-medium.txt */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +27,8 @@
 		D324A91E22413EC5003C14A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D324A92022413EC5003C14A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D38BA98322429EC60091305B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		D38BA9852242A6460091305B /* words-easy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "words-easy.txt"; sourceTree = "<group>"; };
-		D38BA9862242A6460091305B /* words-hard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "words-hard.txt"; sourceTree = "<group>"; };
+		D38BA9852242A6460091305B /* words-short.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "words-short.txt"; sourceTree = "<group>"; };
+		D38BA9862242A6460091305B /* words-long.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "words-long.txt"; sourceTree = "<group>"; };
 		D38BA9872242A6460091305B /* words-medium.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "words-medium.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,9 +69,9 @@
 				D324A91B22413EC5003C14A3 /* Assets.xcassets */,
 				D324A91D22413EC5003C14A3 /* LaunchScreen.storyboard */,
 				D324A92022413EC5003C14A3 /* Info.plist */,
-				D38BA9852242A6460091305B /* words-easy.txt */,
+				D38BA9852242A6460091305B /* words-short.txt */,
 				D38BA9872242A6460091305B /* words-medium.txt */,
-				D38BA9862242A6460091305B /* words-hard.txt */,
+				D38BA9862242A6460091305B /* words-long.txt */,
 			);
 			path = "Just Hangman";
 			sourceTree = "<group>";
@@ -142,8 +142,8 @@
 				D324A91F22413EC5003C14A3 /* LaunchScreen.storyboard in Resources */,
 				D38BA98A2242A6460091305B /* words-medium.txt in Resources */,
 				D324A91C22413EC5003C14A3 /* Assets.xcassets in Resources */,
-				D38BA9882242A6460091305B /* words-easy.txt in Resources */,
-				D38BA9892242A6460091305B /* words-hard.txt in Resources */,
+				D38BA9882242A6460091305B /* words-short.txt in Resources */,
+				D38BA9892242A6460091305B /* words-long.txt in Resources */,
 				D324A91A22413EC4003C14A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -86,13 +87,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ehD-6O-3Z0" userLabel="Main Stack View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEN-Ay-UHW" userLabel="Top Half">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman0" translatesAutoresizingMaskIntoConstraints="NO" id="aUm-Yy-wJB">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,48 +105,61 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02a-oJ-lYJ" userLabel="Bottom Half">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-xK-4Vi">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-xK-4Vi">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am4-uY-TBB">
-                                                        <rect key="frame" x="122" y="0.0" width="131.5" height="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Word Length" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am4-uY-TBB">
+                                                        <rect key="frame" x="20" y="0.0" width="335" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="J2b-Qy-gSK"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dn-bM-s78" userLabel="EASY">
-                                                        <rect key="frame" x="168.5" y="50" width="38" height="50"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dn-bM-s78" userLabel="Short">
+                                                        <rect key="frame" x="137.5" y="48" width="100" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="C0T-bW-bF5"/>
+                                                            <constraint firstAttribute="width" constant="100" id="82K-L8-O10"/>
+                                                            <constraint firstAttribute="height" constant="40" id="pX6-V8-ymF"/>
                                                         </constraints>
-                                                        <state key="normal" title="EASY"/>
+                                                        <state key="normal" title="SHORT"/>
                                                         <connections>
                                                             <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="Amy-C7-ijC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-YF-0E0" userLabel="MEDIUM">
-                                                        <rect key="frame" x="157.5" y="100" width="60" height="50"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-YF-0E0" userLabel="Medium">
+                                                        <rect key="frame" x="112.5" y="96" width="150" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="hDB-eh-lfU"/>
+                                                            <constraint firstAttribute="height" constant="40" id="MCZ-B8-CaW"/>
+                                                            <constraint firstAttribute="width" constant="150" id="zbu-h5-r22"/>
                                                         </constraints>
                                                         <state key="normal" title="MEDIUM"/>
                                                         <connections>
                                                             <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="yTl-Am-YOQ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-IU-rEp" userLabel="HARD">
-                                                        <rect key="frame" x="166.5" y="150" width="42" height="50"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-IU-rEp" userLabel="Long">
+                                                        <rect key="frame" x="87.5" y="144" width="200" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="xtC-nb-UfD"/>
+                                                            <constraint firstAttribute="height" constant="40" id="7UI-eS-wUj"/>
+                                                            <constraint firstAttribute="width" constant="200" id="TP3-ri-VWV"/>
                                                         </constraints>
-                                                        <state key="normal" title="HARD"/>
+                                                        <state key="normal" title="LONG"/>
                                                         <connections>
                                                             <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="CM8-bQ-8pB"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="KBx-IU-rEp" firstAttribute="centerX" secondItem="8Wr-xK-4Vi" secondAttribute="centerX" id="4MA-td-deb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Am4-uY-TBB" secondAttribute="trailing" constant="20" id="89J-Tx-Hk5"/>
+                                                    <constraint firstItem="qp7-YF-0E0" firstAttribute="centerX" secondItem="8Wr-xK-4Vi" secondAttribute="centerX" id="gWM-Y5-f4K"/>
+                                                    <constraint firstItem="5Dn-bM-s78" firstAttribute="centerX" secondItem="8Wr-xK-4Vi" secondAttribute="centerX" id="kxx-S8-2Ej"/>
+                                                    <constraint firstItem="Am4-uY-TBB" firstAttribute="leading" secondItem="8Wr-xK-4Vi" secondAttribute="leading" constant="20" id="mGV-5e-rHb"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,7 +167,6 @@
                                             <constraint firstItem="8Wr-xK-4Vi" firstAttribute="top" secondItem="02a-oJ-lYJ" secondAttribute="top" id="IPo-PA-jlW"/>
                                             <constraint firstItem="8Wr-xK-4Vi" firstAttribute="leading" secondItem="02a-oJ-lYJ" secondAttribute="leading" id="M2i-tx-QDc"/>
                                             <constraint firstAttribute="trailing" secondItem="8Wr-xK-4Vi" secondAttribute="trailing" id="ZuH-8s-0Ef"/>
-                                            <constraint firstAttribute="bottom" secondItem="8Wr-xK-4Vi" secondAttribute="bottom" id="wCT-XA-ThO"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -169,6 +182,11 @@
                         <viewLayoutGuide key="safeArea" id="yaU-3Z-eVZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hangman" id="xxQ-fR-2Rj"/>
+                    <connections>
+                        <outlet property="longButton" destination="KBx-IU-rEp" id="vqB-Uu-5Vp"/>
+                        <outlet property="mediumButton" destination="qp7-YF-0E0" id="5ve-3I-TaM"/>
+                        <outlet property="shortButton" destination="5Dn-bM-s78" id="WMj-ne-1t9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJ5-gw-lPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

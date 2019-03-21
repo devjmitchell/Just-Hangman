@@ -9,13 +9,14 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    // TODO: Continue scrubbing word lists to make sure no words have spaces or special characters
     @IBOutlet var hangmanImage: UIImageView!
     @IBOutlet var usedLettersLabel: UILabel!
     @IBOutlet var buttonsView: UIView!
     @IBOutlet var scoreLabel: UILabel!
     
-    // TODO: Continue scrubbing word lists to make sure no words have spaces or special characters (also, do they belong in that difficulty)
-    var difficulty = ""
+    var isInitialLoad = true
+    var category = ""
     var allWords = [String]()
     var word = ""
     var wordIndex = 0
@@ -44,9 +45,13 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        loadInitialWord()
-        loadButtons()
+        
+        if isInitialLoad {
+            // Set to false so this code isn't ran again if partially swipe back (gesture) but stay in game -- Is there a better way?
+            isInitialLoad = false
+            loadInitialWord()
+            loadButtons()
+        }
     }
     
     
@@ -54,7 +59,7 @@ class GameViewController: UIViewController {
     // MARK: - Setup Methods
     
     func loadInitialWord() {
-        let fileName = "words-\(difficulty.lowercased())"
+        let fileName = "words-\(category.lowercased())"
         if let wordsURL = Bundle.main.url(forResource: fileName, withExtension: "txt") {
             if let wordsContents = try? String(contentsOf: wordsURL) {
                 let words = wordsContents.components(separatedBy: "\n")
@@ -63,12 +68,31 @@ class GameViewController: UIViewController {
                 allWords.shuffle()
                 
                 
-//                // TODO: This will be used to have alphabetized word list that I can update words.txt with -- Remove after done!
+                // Commented code below used when updating word lists to words are unique, sorted, & lowercase (then copy/paste to word lists)
 //                let setOfWords = Set(allWords)
 //                let sortedWords = setOfWords.sorted()
 //                for word in sortedWords {
 //                    print(word.lowercased())
 //                }
+//                print(sortedWords.count)
+                
+                
+//                let shortWords = sortedWords.filter { $0.count <= 4 }
+//                let mediumWords = sortedWords.filter { $0.count == 5 || $0.count == 6 }
+//                let longWords = sortedWords.filter { $0.count >= 7 }
+//
+////                for word in longWords {
+////                    print(word.lowercased())
+////                }
+//
+//                print(shortWords.count)
+//                print(mediumWords.count)
+//                print(longWords.count)
+////
+////                for i in 2...13 {
+////                    let count = sortedWords.filter { $0.count == i }.count
+////                    print("\(i) letter words: \(count)")
+////                }
                 
                 
                 word = allWords[0]
