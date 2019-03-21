@@ -220,7 +220,6 @@ phoenix
 photograph
 photographer
 pineapple
-ping pong
 pinwheel
 platypus
 playground
@@ -302,7 +301,6 @@ toothbrush
 tornado
 tournament
 tractor
-trash can
 treasure
 triangle
 trumpet

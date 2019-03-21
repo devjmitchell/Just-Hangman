@@ -208,6 +208,7 @@ me
 mess
 milk
 mime
+mine
 mold
 mom
 moon
@@ -224,7 +225,8 @@ nice
 nil
 no
 nose
-oar
+null
+ore
 odd
 oil
 old
