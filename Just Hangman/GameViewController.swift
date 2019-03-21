@@ -9,7 +9,6 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    // TODO: Continue scrubbing word lists to make sure no words have spaces or special characters
     @IBOutlet var hangmanImage: UIImageView!
     @IBOutlet var usedLettersLabel: UILabel!
     @IBOutlet var buttonsView: UIView!
@@ -135,7 +134,7 @@ class GameViewController: UIViewController {
         if !promptWord.contains("_") {
             score += 1
             
-            let title = "You Win!"
+            let title = "You Got It!"
             let message = "Great job guessing the correct word."
             presentGameOverAlert(title: title, message: message)
         }
@@ -151,7 +150,7 @@ class GameViewController: UIViewController {
             wrongGuessesRemaining -= 1
             
             if wrongGuessesRemaining == 0 {
-                let title = "Game Over"
+                let title = "Nope!"
                 let message = "The correct word was \(word)"
                 presentGameOverAlert(title: title, message: message)
             }
@@ -179,7 +178,7 @@ class GameViewController: UIViewController {
     func startNewGame(action: UIAlertAction) {
         wordIndex += 1
         if allWords.count == wordIndex {
-            let ac = UIAlertController(title: "No more words!", message: "You've answered them all!", preferredStyle: .alert)
+            let ac = UIAlertController(title: "No more words!", message: "You've seen them all...", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Start Over", style: .default))
             present(ac, animated: true)
             
