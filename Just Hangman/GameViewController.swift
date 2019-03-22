@@ -24,7 +24,12 @@ class GameViewController: UIViewController {
     var letterButtons = [UIButton]()
     var score = 0 {
         didSet {
-            scoreLabel.text = "Score = \(score)"
+            scoreLabel.text = "Win Streak: \(score)"
+            
+            let defaults = UserDefaults.standard
+            if score > defaults.integer(forKey: "WinStreak-\(category.lowercased())") {
+                defaults.set(score, forKey: "WinStreak-\(category.lowercased())")
+            }
         }
     }
     var wrongGuessesRemaining = 7 {
@@ -134,7 +139,7 @@ class GameViewController: UIViewController {
         if !promptWord.contains("_") {
             score += 1
             
-            let title = "You Got It!"
+            let title = "You Win!"
             let message = "Great job guessing the correct word."
             presentGameOverAlert(title: title, message: message)
         }
@@ -151,7 +156,13 @@ class GameViewController: UIViewController {
             
             if wrongGuessesRemaining == 0 {
                 let title = "Nope!"
-                let message = "The correct word was \(word)"
+                var message = "The correct word was \(word)."
+                
+                if score > 0 {
+                    message.append("\nYou had a win streak of \(score).")
+                }
+                
+                score = 0
                 presentGameOverAlert(title: title, message: message)
             }
         }

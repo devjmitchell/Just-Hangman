@@ -28,7 +28,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHG-Q6-BEa" userLabel="Buttons View">
                                 <rect key="frame" x="20" y="378" width="335" height="279"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score = 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ly1-p2-L4c">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win Streak: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ly1-p2-L4c">
                                         <rect key="frame" x="162.5" y="223" width="167.5" height="56"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -108,7 +108,7 @@
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-xK-4Vi">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Word Length" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am4-uY-TBB">
                                                         <rect key="frame" x="20" y="0.0" width="335" height="40"/>
@@ -152,10 +152,24 @@
                                                             <action selector="startGame:" destination="26g-JJ-kBw" eventType="touchUpInside" id="CM8-bQ-8pB"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6v-JQ-Tgf">
+                                                        <rect key="frame" x="20" y="192" width="335" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="b0g-DM-62C"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Win Streak">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="showWinStreaks:" destination="26g-JJ-kBw" eventType="touchUpInside" id="rKD-aU-tTT"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="n6v-JQ-Tgf" firstAttribute="leading" secondItem="8Wr-xK-4Vi" secondAttribute="leading" constant="20" id="4K2-1Z-gQ9"/>
                                                     <constraint firstItem="KBx-IU-rEp" firstAttribute="centerX" secondItem="8Wr-xK-4Vi" secondAttribute="centerX" id="4MA-td-deb"/>
                                                     <constraint firstAttribute="trailing" secondItem="Am4-uY-TBB" secondAttribute="trailing" constant="20" id="89J-Tx-Hk5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="n6v-JQ-Tgf" secondAttribute="trailing" constant="20" id="GR4-HO-hHR"/>
                                                     <constraint firstItem="qp7-YF-0E0" firstAttribute="centerX" secondItem="8Wr-xK-4Vi" secondAttribute="centerX" id="gWM-Y5-f4K"/>
                                                     <constraint firstItem="5Dn-bM-s78" firstAttribute="centerX" secondItem="8Wr-xK-4Vi" secondAttribute="centerX" id="kxx-S8-2Ej"/>
                                                     <constraint firstItem="Am4-uY-TBB" firstAttribute="leading" secondItem="8Wr-xK-4Vi" secondAttribute="leading" constant="20" id="mGV-5e-rHb"/>
@@ -186,6 +200,7 @@
                         <outlet property="longButton" destination="KBx-IU-rEp" id="vqB-Uu-5Vp"/>
                         <outlet property="mediumButton" destination="qp7-YF-0E0" id="5ve-3I-TaM"/>
                         <outlet property="shortButton" destination="5Dn-bM-s78" id="WMj-ne-1t9"/>
+                        <outlet property="winStreakButton" destination="n6v-JQ-Tgf" id="OnS-zm-Eir"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJ5-gw-lPU" userLabel="First Responder" sceneMemberID="firstResponder"/>

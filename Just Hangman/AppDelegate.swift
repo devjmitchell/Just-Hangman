@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        
+        if defaults.object(forKey: "WinStreak-short") == nil {
+            defaults.set(0, forKey: "WinStreak-short")
+            defaults.set(0, forKey: "WinStreak-medium")
+            defaults.set(0, forKey: "WinStreak-long")
+        }
+        
         return true
     }
 
