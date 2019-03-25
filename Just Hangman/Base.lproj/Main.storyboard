@@ -96,7 +96,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="aUm-Yy-wJB" secondAttribute="bottom" id="cSR-5t-2TW"/>
                                             <constraint firstAttribute="trailing" secondItem="aUm-Yy-wJB" secondAttribute="trailing" id="pbY-Th-oaH"/>
@@ -157,9 +156,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="b0g-DM-62C"/>
                                                         </constraints>
-                                                        <state key="normal" title="Win Streak">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
+                                                        <state key="normal" title="Win Streak"/>
                                                         <connections>
                                                             <action selector="showWinStreaks:" destination="26g-JJ-kBw" eventType="touchUpInside" id="rKD-aU-tTT"/>
                                                         </connections>
@@ -176,7 +173,6 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="8Wr-xK-4Vi" firstAttribute="top" secondItem="02a-oJ-lYJ" secondAttribute="top" id="IPo-PA-jlW"/>
                                             <constraint firstItem="8Wr-xK-4Vi" firstAttribute="leading" secondItem="02a-oJ-lYJ" secondAttribute="leading" id="M2i-tx-QDc"/>
