@@ -25,11 +25,6 @@ class GameViewController: UIViewController {
     var score = 0 {
         didSet {
             scoreLabel.text = "Win Streak: \(score)"
-            
-            let defaults = UserDefaults.standard
-            if score > defaults.integer(forKey: "WinStreak-\(category.lowercased())") {
-                defaults.set(score, forKey: "WinStreak-\(category.lowercased())")
-            }
         }
     }
     var wrongGuessesRemaining = 7 {
@@ -63,6 +58,7 @@ class GameViewController: UIViewController {
     // MARK: - Setup Methods
     
     func loadInitialWord() {
+        // TODO: Add more words to each category. Currently about 1000 total words, but should there be more?
         let fileName = "words-\(category.lowercased())"
         if let wordsURL = Bundle.main.url(forResource: fileName, withExtension: "txt") {
             if let wordsContents = try? String(contentsOf: wordsURL) {
@@ -139,8 +135,16 @@ class GameViewController: UIViewController {
         if !promptWord.contains("_") {
             score += 1
             
+            // FIXME: Figure out why the "You Win" alert occasionally pops up after "Nope" alert... Still empty words not filtering out?
             let title = "You Win!"
-            let message = "Great job guessing the correct word."
+            var message = "Great job guessing the correct word."
+            
+            let defaults = UserDefaults.standard
+            if score > defaults.integer(forKey: "WinStreak-\(category.lowercased())") {
+                defaults.set(score, forKey: "WinStreak-\(category.lowercased())")
+                message.append("\nNew best win streak of \(score)!")
+            }
+            
             presentGameOverAlert(title: title, message: message)
         }
     }
