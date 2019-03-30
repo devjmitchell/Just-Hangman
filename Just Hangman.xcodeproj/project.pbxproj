@@ -108,6 +108,7 @@
 				TargetAttributes = {
 					D324A91022413EC4003C14A3 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -312,7 +313,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devjm.Just-Hangman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -330,7 +331,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devjm.Just-Hangman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
