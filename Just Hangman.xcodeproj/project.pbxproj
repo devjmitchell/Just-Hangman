@@ -86,6 +86,7 @@
 				D324A90D22413EC4003C14A3 /* Sources */,
 				D324A90E22413EC4003C14A3 /* Frameworks */,
 				D324A90F22413EC4003C14A3 /* Resources */,
+				D3C546202252806B0090F495 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -150,6 +151,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D3C546202252806B0090F495 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#!/bin/bash\n\n#  update_build_number.sh\n#  Usage: `update_build_number.sh [branch]`\n#  Run this script after the 'Copy Bundle Resources' build phase\n#  Ref: http://tgoode.com/2014/06/05/sensible-way-increment-bundle-version-cfbundleversion-xcode/\n\ncurrentBranch=$(git rev-parse --abbrev-ref HEAD)\nbranch=$currentBranch\n\nwhile getopts ':e:b:' OPTION; do\ncase \"${OPTION}\" in\ne) TARGET_ENV=${OPTARG}\n;;\nb) branch=${OPTARG}\n;;\nesac\ndone\n\nbuildNumber=$(expr $(git rev-list $branch --count) - $(git rev-list HEAD..$branch --count))\n\ncase \"$TARGET_ENV\" in\ndev)    BUILDNUMBER_ENV=$buildNumber.1;;\nqa)     BUILDNUMBER_ENV=$buildNumber.2;;\nstaging)   BUILDNUMBER_ENV=$buildNumber.3;;\nprod)     BUILDNUMBER_ENV=$buildNumber.4;;\n*)      BUILDNUMBER_ENV=$buildNumber;;\nesac\n\necho \"Updating build number to $BUILDNUMBER_ENV using branch '$branch'.\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILDNUMBER_ENV\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nif [ -f \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}.dSYM/Contents/Info.plist\" ]; then\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILDNUMBER_ENV\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}.dSYM/Contents/Info.plist\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D324A90D22413EC4003C14A3 /* Sources */ = {

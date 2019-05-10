@@ -38,17 +38,6 @@ class StartViewController: UIViewController {
     }
     
     
-    func updateWinStreakButton() {
-        let winStreakShort = defaults.integer(forKey: "WinStreak-short")
-        let winStreakMedium = defaults.integer(forKey: "WinStreak-medium")
-        let winStreakLong = defaults.integer(forKey: "WinStreak-long")
-        
-        let winStreakArray = [winStreakShort, winStreakMedium, winStreakLong]
-        guard let bestWinStreak = winStreakArray.max() else { return }
-        winStreakButton.setTitle("Best Win Streak: \(String(describing: bestWinStreak))", for: .normal)
-    }
-    
-    
     func setupButtonBorders() {
         let buttons: [UIButton] = [shortButton, mediumButton, longButton]
         
@@ -57,6 +46,17 @@ class StartViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGray.cgColor
         }
+    }
+    
+    
+    func updateWinStreakButton() {
+        let winStreakShort = defaults.integer(forKey: "WinStreak-short")
+        let winStreakMedium = defaults.integer(forKey: "WinStreak-medium")
+        let winStreakLong = defaults.integer(forKey: "WinStreak-long")
+        
+        let winStreakArray = [winStreakShort, winStreakMedium, winStreakLong]
+        guard let bestWinStreak = winStreakArray.max() else { return }
+        winStreakButton.setTitle("Best Win Streak: \(String(describing: bestWinStreak))", for: .normal)
     }
     
     
