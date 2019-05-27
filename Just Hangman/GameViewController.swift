@@ -135,7 +135,6 @@ class GameViewController: UIViewController {
         if !promptWord.contains("_") {
             score += 1
             
-            // FIXME: Figure out why the "You Win" alert occasionally pops up after "Nope" alert... Still empty words not filtering out?
             let title = "You Win!"
             var message = "Great job guessing the correct word."
             
@@ -153,7 +152,14 @@ class GameViewController: UIViewController {
     @objc func letterTapped(_ sender: UIButton) {
         guard let letter = sender.titleLabel?.text else { return }
         
-        letterButtons[sender.tag].isHidden = true
+        letterButtons[sender.tag].isUserInteractionEnabled = false
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.letterButtons[sender.tag].transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
+        }) { _ in
+            self.letterButtons[sender.tag].isHidden = true
+            self.letterButtons[sender.tag].transform = .identity
+        }
         
         if !word.contains(letter) {
             wrongGuessesRemaining -= 1
@@ -210,8 +216,13 @@ class GameViewController: UIViewController {
     
     
     func resetButtons() {
-        for button in letterButtons {
-            button.isHidden = false
+        // FIXME: Currently forcing a delay here, just in case animations on individual buttons haven't completed - Find a better way!
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            for button in self.letterButtons {
+                button.isUserInteractionEnabled = true
+                button.isHidden = false
+                button.transform = .identity
+            }
         }
     }
 }
